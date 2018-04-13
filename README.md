@@ -3,6 +3,7 @@
 A command line utility for macOS that can either broadcast iBeacon signal or scan for iBeacons.
 
 ## Usage
+
 `$ ./beacontool 
 beacontool: iBeacon command line utility
 
