@@ -12,7 +12,7 @@ A command line utility for macOS that can either broadcast iBeacon signal or sca
 
 ## Examples
 
-Scan in 2 sec intervals: ` $ ./beacontool -s 2`
+Scan in 2 second intervals: ` $ ./beacontool -s 2`
 
 Generate UUID value: `$ ./beacontool -g`
 
