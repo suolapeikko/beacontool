@@ -3,7 +3,7 @@
 //  beacontool
 //
 //  Created by Suolapeikko on 23/11/17.
-//  Copyright © 2017 Suolapeikko. All rights reserved.
+//  Copyright © 2019 Suolapeikko. All rights reserved.
 //
 
 import Foundation
@@ -39,8 +39,8 @@ if(argCount == 6 && !(args[1] == "-b")) {
 if(errorFlag) {
     print("beacontool: iBeacon command line utility\n");
     print("         Usage:");
-    print("         beacontool -b                           Broadcast iBeacon signal with generated uuid, minor, major and power values");
-    print("         beacontool -b <uid> <n> <n> <n>         Broadcast iBeacon signal with custom uuid, minor, major and power values");
+    print("         beacontool -b                           Broadcast iBeacon signal with generated uuid, major, minor and power values");
+    print("         beacontool -b <uid> <n> <n> <n>         Broadcast iBeacon signal with custom uuid, major, minor and power values");
     print("         beacontool -s <n>                       Scan for any iBeacon signals in <n> second intervals");
     print("         beacontool -g                           Generate UUID value");
     exit(EXIT_FAILURE)

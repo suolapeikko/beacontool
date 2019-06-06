@@ -3,7 +3,7 @@
 //  beacontool
 //
 //  Created by Suolapeikko on 24/11/17.
-//  Copyright © 2017 Suolapeikko. All rights reserved.
+//  Copyright © 2019 Suolapeikko. All rights reserved.
 //
 
 import Foundation
@@ -19,6 +19,7 @@ class BeaconScanner: NSObject, CBCentralManagerDelegate {
         self.type = type
     }
     
+    // Inteval scanning
     func scanWithInterval(_ interval: Int) {
 
         if(type == BeaconType.iBeacon) {
@@ -34,16 +35,16 @@ class BeaconScanner: NSObject, CBCentralManagerDelegate {
         self.timer = Timer.scheduledTimer(timeInterval: TimeInterval(interval), target: self, selector: #selector(scan), userInfo: nil, repeats: true)
     }
     
-    /// Scanning for bluetooth peripherals
+    /// Scan for Bluetooth peripherals
     @objc func scan() {
         
         // Scan for Bluetooth peripherals
-        if(cbManager != nil && cbManager.state.rawValue==CBCentralManagerState.poweredOn.rawValue) {
+        if(cbManager != nil && cbManager.state.rawValue==CBManagerState.poweredOn.rawValue) {
             cbManager.scanForPeripherals(withServices: nil, options: nil)
         }
     }
     
-    /// Found one, so checking if it is iBeacon
+    /// Found one, so check if it is iBeacon
     func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
         
         let data = Beacon(peripheral: peripheral, advertisementData: advertisementData as NSDictionary, RSSI: RSSI)
@@ -53,7 +54,7 @@ class BeaconScanner: NSObject, CBCentralManagerDelegate {
     /// Reacting to bluetooth peripheral manager's state change
     func centralManagerDidUpdateState(_ central: CBCentralManager) {
 
-        if(!(central.state.rawValue == CBCentralManagerState.poweredOn.rawValue)) {
+        if(!(central.state.rawValue == CBManagerState.poweredOn.rawValue)) {
             print("In order to user this tool, Bluetooth must be switched on\n")
             exit(EXIT_FAILURE)
         }

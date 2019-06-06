@@ -1,9 +1,9 @@
 //
-//  BeaconAdvertisement.swift
+//  Beacon.swift
 //  beacontool
 //
 //  Created by Suolapeikko on 24/11/17.
-//  Copyright © 2017 Suolapeikko. All rights reserved.
+//  Copyright © 2019 Suolapeikko. All rights reserved.
 //
 
 import Foundation
@@ -63,7 +63,7 @@ struct Beacon {
         return NSDictionary(object: advertisement, forKey: beaconKey)
     }
 
-    /// Check supplied bluetoot advertisement data and print it out if it's type is iBeacon
+    /// Check supplied bluetooth advertisement data and print it out if it's type is iBeacon
     func checkAdvertisementDataForPossibleiBeaconData() {
         
         let beaconStandard: [CUnsignedChar] = [0x4c, 0x00, 0x02, 0x15]
@@ -94,7 +94,7 @@ struct Beacon {
                 let power = powerBytes
                 
                 let distance = calculateBeaconDistance(Int(power), RSSI: Int(truncating: RSSI))
-                print("UUID=\(uuid.uuidString), major=\(major), minor=\(minor), power=\(power), RSSI=\(RSSI), Distance=\(String(format: "%.2f", distance))m")
+                print("UUID=\(uuid.uuidString), major=\(major), minor=\(minor), power=\(power), RSSI=\(String(describing: RSSI)), Distance=\(String(format: "%.2f", distance))m")
             }
         }
     }
