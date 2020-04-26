@@ -37,12 +37,12 @@ if(argCount == 6 && !(args[1] == "-b")) {
 }
 
 if(errorFlag) {
-    print("beacontool: iBeacon command line utility\n");
-    print("         Usage:");
-    print("         beacontool -b                           Broadcast iBeacon signal with generated uuid, major, minor and power values");
-    print("         beacontool -b <uid> <n> <n> <n>         Broadcast iBeacon signal with custom uuid, major, minor and power values");
-    print("         beacontool -s <n>                       Scan for any iBeacon signals in <n> second intervals");
-    print("         beacontool -g                           Generate UUID value");
+    print("beacontool: iBeacon command line utility (Version 1.0)\n");
+    print("   Usage:");
+    print("   beacontool -b                           Broadcast iBeacon signal with generated uuid, major, minor and power values");
+    print("   beacontool -b <uid> <n> <n> <n>         Broadcast iBeacon signal with custom uuid, major, minor and power values");
+    print("   beacontool -s <n>                       Scan for any iBeacon signals in <n> second intervals");
+    print("   beacontool -g                           Generate UUID value");
     exit(EXIT_FAILURE)
 }
 

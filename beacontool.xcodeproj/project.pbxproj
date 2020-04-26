@@ -111,11 +111,11 @@
 			};
 			buildConfigurationList = E451CC2F1CBD6B57000C4D39 /* Build configuration list for PBXProject "beacontool" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				English,
 				en,
+				Base,
 			);
 			mainGroup = E451CC2B1CBD6B56000C4D39;
 			productRefGroup = E451CC351CBD6B57000C4D39 /* Products */;

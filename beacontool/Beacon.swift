@@ -58,7 +58,7 @@ struct Beacon {
         
         advertisementBytes[20] = CUnsignedChar(bitPattern: power)
         
-        let advertisement = Data(bytes: UnsafePointer<UInt8>(advertisementBytes), count: bufferSize)
+        let advertisement = Data(bytes: Array<UInt8>(advertisementBytes), count: bufferSize)
         
         return NSDictionary(object: advertisement, forKey: beaconKey)
     }
